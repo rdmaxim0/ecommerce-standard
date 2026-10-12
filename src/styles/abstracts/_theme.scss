@@ -1,0 +1,16 @@
+// abstracts/_theme.scss
+
+// 🍔 Cores Fast Food (Inspirado no padrão de apps de delivery)
+$theme-primary: #ea1d2c;    // Vermelho apetite (cor principal)
+$theme-primary-hover: #cf1523; 
+$theme-bg: #f8fafc;         // Fundo geral do app (cinza bem clarinho)
+$theme-surface: #ffffff;    // Fundo dos cards (branco)
+$theme-text: #1e293b;       // Texto principal (títulos)
+$theme-text-light: #64748b; // Texto secundário (ingredientes, descrições)
+$theme-accent: #f59e0b;     // Amarelo/Laranja para estrelas de avaliação ou destaques
+
+// Espaçamentos e Bordas
+$radius-sm: 4px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-pill: 50px;

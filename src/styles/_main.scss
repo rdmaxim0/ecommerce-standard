@@ -1,0 +1,12 @@
+// 1. Abstracts (Variáveis e Mixins)
+@use './abstracts/theme';
+@use './abstracts/mixins';
+
+// 2. Base
+@use './base/reset';
+
+
+// 3. Components 
+@use './components/headerCatalog';
+@use './components/productGrid';
+@use './components/cartSideBar';

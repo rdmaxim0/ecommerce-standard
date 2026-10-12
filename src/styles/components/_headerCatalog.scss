@@ -1,0 +1,131 @@
+@use '../abstracts/theme' as *;
+
+.catalog-header {
+    background-color: $theme-surface;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100; // Fica sempre no topo ao rolar a página
+    padding-bottom: 12px;
+}
+
+// 1. Topo (Logo e Carrinho)
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    .brand h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: $theme-text;
+        margin: 0;
+        
+        span {
+            color: $theme-primary;
+        }
+    }
+
+    .cart-btn {
+        position: relative;
+        background: transparent;
+        border: none;
+        color: $theme-text;
+        cursor: pointer;
+        padding: 4px;
+        
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: -6px;
+            background-color: #ef4444; // Vermelho padrão para alertas de carrinho
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid $theme-surface;
+        }
+    }
+}
+
+// 2. Barra de Busca
+.search-bar {
+    padding: 0 16px 16px;
+
+    .search-input-wrapper {
+        position: relative;
+        width: 100%;
+
+        .search-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $theme-text-light;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px 14px 44px; // Espaço para o ícone
+            background-color: $theme-bg;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: $radius-md;
+            font-size: 1rem;
+            color: $theme-text;
+            outline: none;
+            transition: border-color 0.2s;
+
+            &:focus {
+                border-color: $theme-primary;
+                background-color: $theme-surface;
+            }
+        }
+    }
+}
+
+// 3. Categorias (Menu Deslizante)
+.categories-nav {
+    padding: 0 16px;
+
+    .categories-list {
+        display: flex;
+        gap: 12px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow-x: auto;
+        padding-bottom: 4px; // Espaço para a barra de rolagem (se visível)
+        
+        // Esconde a barra de rolagem no celular para ficar mais limpo
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .category-pill {
+        white-space: nowrap; // Impede que o texto quebre de linha
+        background-color: $theme-bg;
+        color: $theme-text-light;
+        border: 1px solid rgba(0,0,0,0.05);
+        padding: 8px 16px;
+        border-radius: $radius-pill;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &.active, &:hover {
+            background-color: $theme-primary;
+            color: white;
+            border-color: $theme-primary;
+        }
+    }
+}
