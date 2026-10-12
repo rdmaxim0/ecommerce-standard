@@ -4,6 +4,10 @@ import ProductGrid from './components/ProductsGrid';
 import CartSidebar, { type CartItem } from './components/CartSideBar';
 import './styles/_main.scss';
 
+// Importações da Vercel
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 function App() {
   const [activeCategory, setActiveCategory] = useState('Todos');
   const [searchQuery, setSearchQuery] = useState(''); // NOVO ESTADO DA PESQUISA
@@ -67,6 +71,10 @@ function App() {
         onRemoveItem={handleRemoveItem}
         onUpdateQuantity={handleUpdateQuantity}
       />
+
+      {/* Ferramentas da Vercel rodando invisivelmente */}
+      <Analytics />
+      <SpeedInsights />
     </>
   );
 }

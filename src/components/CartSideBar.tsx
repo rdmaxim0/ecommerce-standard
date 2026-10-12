@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { XIcon, TrashIcon, WhatsappLogoIcon, CaretLeftIcon } from '@phosphor-icons/react';
-import '../styles/components/_cartSidebar.scss';
+import '../styles/components/_cartSideBar.scss';
 
 export interface CartItem {
     id: number;
